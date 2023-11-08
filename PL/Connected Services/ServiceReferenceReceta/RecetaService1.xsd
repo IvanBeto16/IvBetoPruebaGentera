@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ML" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ML" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Receta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Diagnostico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdReceta" type="xs:int" />
+      <xs:element minOccurs="0" name="Recetas" nillable="true" type="tns:ArrayOfReceta" />
+      <xs:element minOccurs="0" name="Tratamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Receta" nillable="true" type="tns:Receta" />
+  <xs:complexType name="ArrayOfReceta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Receta" nillable="true" type="tns:Receta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceta" nillable="true" type="tns:ArrayOfReceta" />
+  <xs:complexType name="RecetaAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alumno" nillable="true" type="tns:Alumno" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Objects" nillable="true" type="tns:ArrayOfRecetaAlumno" />
+      <xs:element minOccurs="0" name="Receta" nillable="true" type="tns:Receta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecetaAlumno" nillable="true" type="tns:RecetaAlumno" />
+  <xs:complexType name="Alumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alumnos" nillable="true" type="tns:ArrayOfAlumno" />
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Matricula" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alumno" nillable="true" type="tns:Alumno" />
+  <xs:complexType name="ArrayOfAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alumno" nillable="true" type="tns:Alumno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlumno" nillable="true" type="tns:ArrayOfAlumno" />
+  <xs:complexType name="ArrayOfRecetaAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecetaAlumno" nillable="true" type="tns:RecetaAlumno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecetaAlumno" nillable="true" type="tns:ArrayOfRecetaAlumno" />
+</xs:schema>

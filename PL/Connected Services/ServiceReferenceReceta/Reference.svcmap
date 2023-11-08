@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c3a4284e-194c-4f90-8407-102309a80d76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57172/RecetaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RecetaService.wsdl" MetadataType="Wsdl" ID="ddd8da5a-5b2b-492f-87e8-f7823a84db30" SourceId="1" SourceUrl="http://localhost:57172/RecetaService.svc?wsdl" />
+    <MetadataFile FileName="RecetaService.xsd" MetadataType="Schema" ID="723b3b72-8779-4d84-880f-20cbfd3a142e" SourceId="1" SourceUrl="http://localhost:57172/RecetaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RecetaService1.xsd" MetadataType="Schema" ID="cf1df901-522a-4946-a744-36919470304c" SourceId="1" SourceUrl="http://localhost:57172/RecetaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RecetaService2.xsd" MetadataType="Schema" ID="a1bb6ae1-eef2-4016-8197-9862c64e7d82" SourceId="1" SourceUrl="http://localhost:57172/RecetaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RecetaService.disco" MetadataType="Disco" ID="d2674bd0-9f86-492c-b4e7-5ba67023174c" SourceId="1" SourceUrl="http://localhost:57172/RecetaService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

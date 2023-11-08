@@ -1,0 +1,38 @@
+﻿@model ML.Receta
+@{
+    ViewBag.Title = "FormReceta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Formulario de Recetas</h2>
+<br /> <br />
+<span>Llene los campos para poder registrar una nueva receta o actualizar la existente y se verá en la lista</span>
+<br /> <hr />
+@using(Html.BeginForm("FormReceta", "Receta", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+    @Html.HiddenFor(model => Model.IdReceta)
+                <div class="row row-cols-2">
+                    <div class="col-lg-6">
+                        @Html.Label("Diagnostico del Paciente")
+                        @Html.TextBoxFor(model => Model.Diagnostico, new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-6">
+                        @Html.Label("Tratamiento para el paciente")
+                        @Html.TextBoxFor(model => Model.Tratamiento, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col-lg-6">
+                        @Html.Label("Fecha de la Receta")
+                        @Html.TextBoxFor(model => Model.Fecha, new { @class = "form-control" })
+                    </div>
+                    <div>
+                        @Html.Label("Matricula del Alumno a Recetar (Id del Alumno)")
+                        @Html.DropDownList("Matricula",new SelectList("12345"),"Seleccione la matricula del alumno", new { @class = "form-control"})
+                    </div>
+                </div>
+                <br /> <br />
+                <button class="btn btn-success">Agregar Receta</button>
+                <a class="btn btn-danger" href="@Url.Action("GetAllRecetas", "Receta")">Volver a la Vista</a>
+            }
+

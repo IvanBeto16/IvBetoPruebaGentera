@@ -1,0 +1,57 @@
+﻿@model ML.RecetaAlumno
+@{
+    ViewBag.Title = "GetAllRecetas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Recetas Tramitadas</h2>
+<br />
+<br />
+<span>
+    Se muestra una lista de las recetas tramitadas a los alumnos que se tienen en el sistema.
+    Tanto la información de la receta como del alumno se muestra aqui
+</span>
+<hr />
+@if (Model.Objects.Count > 0)
+{
+    <table class="table table-responsive table-bordered text-light bg-dark">
+        <thead>
+            <tr>
+                <th>Editar Receta Medica</th>
+                <th>No. Receta</th>
+                <th>Fecha de Consulta</th>
+                <th>Diagnostico</th>
+                <th>Tratamiento</th>
+                <th>Nombre del Paciente</th>
+                <th>Fecha de Nacimiento del Alumno</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(ML.RecetaAlumno item in Model.Objects)
+                {
+                    <tr>
+                        <td><a class="btn btn-warning" href="@Url.Action("FormReceta","Receta", new { idReceta = item.Receta.IdReceta })">Editar</a></td>
+                        <td>@item.Receta.IdReceta</td>
+                        <td>@item.Receta.Fecha</td>
+                        <td>@item.Receta.Diagnostico</td>
+                        <td>@item.Receta.Tratamiento</td>
+                        <td>@item.Alumno.Nombre @item.Alumno.ApellidoPaterno @item.Alumno.ApellidoMaterno</td>
+                        <td>@item.Alumno.FechaNacimiento</td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Mira cuanto vacío!</h4>
+        <p> Aún no hay recetas en este apartado, por lo que la lista se encuentra vacia y no se puede mostrar nada. Puedes agregar recetas haciendo click en el botón
+        correspondiente, llamado "Crear Receta" para llenar el formulario indicado y se pueda mostrar aqui.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+}
+<br />
+<br />
+<span>Haga cick en este botón para poder crear nuevas recetas: </span>  <a href="@Url.Action("FormReceta", "Receta", new { idReceta = 0 })" class="btn btn-success">Crear Recetas</a>
